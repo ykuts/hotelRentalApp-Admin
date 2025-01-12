@@ -1,0 +1,146 @@
+#booking {
+  .heading{
+    text-transform: capitalize;
+    font-size: 2.4rem; /* Prominent heading */
+    font-weight: 450;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .content-wrapper {
+    width: 540px;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem; /* Added padding for better spacing */
+    background-color: #fff; /* Clean white background */
+    border-radius: 8px; /* Smooth rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #333; /* Neutral text color for readability */
+      line-height: 1.6; /* Improved text spacing */
+    }
+
+    .cta-wrapper {
+      margin-top: 1rem; /* Add spacing above buttons */
+
+      button {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 1rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(
+        135deg,
+        #000000,
+        #4a4a4a
+      ); /* Smooth gradient background */
+
+      color: white;
+      margin-right: 1rem;
+      font-weight: 500;
+        color: white;
+        font-size: 1rem; /* Ensure consistent font size */
+        text-transform: uppercase; /* Uniform button text style */
+        border-radius: 6px; /* Smooth rounded corners */
+        transition: all 0.3s ease; /* Smooth hover and active transitions */
+
+        &:hover {
+          background: linear-gradient(
+          135deg,
+          #4a4a4a,
+          #000000
+        ); /* Smooth gradient background */
+
+        transform: translateY(-3px); /* Subtle lift effect */
+        }
+
+        &:active {
+          transform: translateY(0); /* Reset lift effect on click */
+        }
+
+        &.danger {
+          background: linear-gradient(
+            135deg,
+            rgb(255, 27, 27),
+            #cc0000
+          ); /* Smooth gradient background */
+          outline: none;
+          border: none;
+          padding: 1rem 2rem;
+          color: white;
+
+          &:hover {
+            background: linear-gradient(
+              135deg,
+              #cc0000,
+              rgb(255, 27, 27)
+            ); /* Smooth gradient background */
+            transform: translateY(-3px); /* Subtle lift effect */
+          }
+          
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Design for Medium Screens */
+@media (max-width: 800px) {
+  #booking {
+    .heading{
+      text-transform: capitalize;
+      font-size: 2.1rem; /* Prominent heading */
+      font-weight: 450;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .content-wrapper {
+      padding: 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+    p {
+      font-size: 1rem; /* Reduce font size for medium screens */
+    }
+
+    button {
+      font-size: 0.95rem;
+      padding: 0.9rem 1.5rem; /* Adjust padding for medium screens */
+    }
+  }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 540px) {
+  #booking {
+
+    .heading{
+      text-transform: capitalize;
+      font-size: 2rem; /* Prominent heading */
+      font-weight: 450;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .content-wrapper {
+      padding: 1rem; /* Reduced padding for small screens */
+    }
+
+    p {
+      font-size: 0.9rem; /* Smaller text for better fit */
+    }
+
+    .cta-wrapper {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center;
+
+      button {
+        margin: 0.5rem 0; /* Add spacing between stacked buttons */
+        width: 100%; /* Full-width buttons for usability */
+      }
+    }
+  }
+}

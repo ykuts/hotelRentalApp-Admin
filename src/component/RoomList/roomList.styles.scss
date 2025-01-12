@@ -1,0 +1,124 @@
+// #room-list {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: 20px;
+
+//   .room-unit {
+//     text-align: center;
+//     p {
+//       font-size: 1.2rem;
+//       text-transform: capitalize;
+//     }
+//   }
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+
+//   .img-wrapper {
+//     height: 300px;
+//     margin-bottom: 1rem;
+//   }
+// }
+
+// @media (max-width: 800px) {
+//   #room-list {
+//     grid-template-columns: repeat(2, 1fr);
+//     .img-wrapper {
+//       height: 200px;
+//     }
+//   }
+// }
+
+// @media (max-width: 540px) {
+//   #room-list {
+//     display: block;
+//     .room-unit {
+//       display: block;
+//       margin-bottom: 2rem;
+//     }
+//   }
+// }
+body{
+  background: linear-gradient(235deg, #fff6fb, #ffd1d1);
+}
+
+#room-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;  // To limit the width on large screens
+  .room-unit {
+    text-align: center;
+    background: linear-gradient(135deg, #ff7dc4, #ff5a5a);/* Smooth gradient background */
+    // Add background color to room units for clarity
+    border-radius: 8px;      // Rounded corners for room units
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
+    overflow: hidden;  // Ensures image is contained within the rounded corners
+    &:hover {
+      background: linear-gradient(135deg, #ff5a5a, #ff61b8); /* Reverse gradient on hover */
+      transform: translateY(-3px); /* Slight lift effect */
+      box-shadow: 0 8px 15px rgba(255, 90, 90, 0.4); /* Glow effect */
+    }
+
+    p {
+      font-size: 1.1rem;
+      text-transform: capitalize;
+      font-weight: 500;
+      color: #ffffffe0;  // Ensures text color is clear
+      margin: 0.5rem 0;  // Adds spacing for text
+      padding: 0 1rem;
+    }
+  }
+
+  .img-wrapper {
+    height: 300px;
+    margin-bottom: 1rem;
+    position: relative;  // To control image positioning if needed
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;  // Ensures image covers the container without stretching
+      border-radius: 8px; // Rounds image corners to match the container
+    }
+  }
+
+  // Add a hover effect to room units for interactivity
+  .room-unit:hover {
+    transform: translateY(-5px);  // Lifts the unit slightly on hover
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);  // Stronger shadow on hover
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+// Responsive design for medium screens
+@media (max-width: 800px) {
+  #room-list {
+    grid-template-columns: repeat(2, 1fr);
+
+    .img-wrapper {
+      height: 250px;  // Adjust height on medium screens
+    }
+  }
+}
+
+// Responsive design for small screens (mobile-first)
+@media (max-width: 540px) {
+  #room-list {
+    display: block;
+    padding: 0 15px;  // Padding adjustment for small screens
+
+    .room-unit {
+      margin-bottom: 2rem;  // Spacing between room units
+      display: block;
+      background: linear-gradient(135deg, #ff7dc4, #ff5a5a);/* Smooth gradient background */
+    // Add background color to room units for clarity
+
+    }
+  }
+}

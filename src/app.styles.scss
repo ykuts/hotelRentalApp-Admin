@@ -1,0 +1,157 @@
+
+/* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+  font-family: 'Arial', sans-serif; /* Clean and modern font */
+  line-height: 1.6;
+  color: #333; /* Neutral text color */
+  background-color: #f9f9f9; /* Subtle background color for better contrast */
+}
+
+/* Link Style */
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #007bff; /* Blue color on hover for interactivity */
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Heading Styles */
+.heading {
+  font-size: 2.1rem;
+  font-weight: 350;
+  margin-bottom: 2rem;
+  color: #222; /* Slightly darker for contrast */
+  &.center {
+    text-align: center;
+  }
+}
+
+/* Form Wrapper */
+.form-wrapper {
+  width: 540px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  .input-group {
+    margin-bottom: 1.5rem; /* Increased spacing for better readability */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500; /* Slightly bold labels for emphasis */
+    color: #000000b7; /* Muted label color */
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1rem; /* Consistent padding for inputs */
+    font-size: 1rem;
+    border: 1px solid #ccc; /* Light border for inputs */
+    border-radius: 6px; /* Rounded corners for inputs */
+    background-color: #f9f9f9; /* Light background for inputs */
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #007bff; /* Highlight input border on focus */
+    background-color: #ffffff; /* White background for active input */
+    outline: none;
+  }
+
+  textarea {
+    height: 120px; /* Slightly taller for better usability */
+    resize: vertical; /* Allow vertical resizing only */
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #ff7dc4, #ff5a5a); /* Gradient button background */
+    color: white;
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button:hover {
+    background: linear-gradient(135deg, #ff5a5a, #ff7dc4); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 8px 15px rgba(255, 90, 90, 0.4); /* Glow effect */
+  }
+
+  button:active {
+    transform: translateY(0); /* Reset button lift on click */
+  }
+}
+
+/* Responsive Design for Medium Screens */
+@media (max-width: 800px) {
+  .form-wrapper {
+    padding: 1.5rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem; /* Slightly smaller font size */
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.9rem 0;
+  }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 540px) {
+  .heading {
+    font-size: 1.5rem; /* Smaller heading size */
+  }
+
+  .form-wrapper {
+    padding: 1rem; /* Reduced padding for small screens */
+    box-shadow: none; /* Remove shadow for simplicity */
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.8rem 0;
+  }
+}
