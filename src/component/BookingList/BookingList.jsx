@@ -45,7 +45,7 @@ const BookingList = ({ data }) => {
         </table>
       </div>
     </div>
-  );
+);
 };
 
 export default BookingList;

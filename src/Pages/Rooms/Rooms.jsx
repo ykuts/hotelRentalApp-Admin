@@ -30,7 +30,10 @@ const Rooms = () => {
         <h1 className="heading center">Rooms</h1>
         {rooms.length > 0 ? <RoomList data={rooms} /> : null}
       </div>
+
+      
     </div>
+
   );
 };
 

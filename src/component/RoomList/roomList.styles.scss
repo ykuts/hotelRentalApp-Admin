@@ -42,7 +42,7 @@
 //   }
 // }
 body{
-  background: linear-gradient(235deg, #fff6fb, #ffd1d1);
+  background: #fff6fb;
 }
 
 #room-list {
@@ -51,7 +51,8 @@ body{
   gap: 20px;
   padding: 20px;
   margin: 0 auto;
-  max-width: 1200px;  // To limit the width on large screens
+  max-width: 100%;
+  margin-bottom: 3rem;  // To limit the width on large screens
   .room-unit {
     text-align: center;
     background: linear-gradient(135deg, #ff7dc4, #ff5a5a);/* Smooth gradient background */
@@ -122,3 +123,4 @@ body{
     }
   }
 }
+

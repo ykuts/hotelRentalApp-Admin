@@ -20,14 +20,17 @@
 //   }
 // }
 
-////////////////
+
 .main-header {
   background: linear-gradient(135deg, #1e1e1e, #4a4a4a); /* Smooth gradient background */
   color: #fff;
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
   padding: -1% 1% 3%; /* Default padding */
   position: relative; /* Ensures dropdowns or overlays are positioned properly */
-
+  // position: sticky; /* Make header stick to the top of the viewport */
+  // top: 0; /* Stick to the top when scrolling */
+  // z-index: 1000; /* Ensure it's above other content */
+  // transition: all 0.3s ease;
   .container {
     display: flex;
     align-items: center;
@@ -39,7 +42,7 @@
   .logo {
       font-size: 1.3rem;
       font-weight: bold;
-      color: #ff7dc4; /* Pink color for the logo to stand out */
+      color: #ff77c2; /* Pink color for the logo to stand out */
       text-transform: uppercase;
       text-decoration: none;
       transition: color 0.3s ease;

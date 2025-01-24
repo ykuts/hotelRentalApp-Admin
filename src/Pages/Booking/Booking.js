@@ -69,8 +69,9 @@ const Booking = () => {
             </button>
           </div>
         </div>
-      )}
+      )}      
     </div>
+    
   );
 };
 

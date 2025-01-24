@@ -2,15 +2,16 @@
   .heading{
     text-transform: capitalize;
     font-size: 2.4rem; /* Prominent heading */
-    font-weight: 450;
+    font-weight: 500;
     color: #333;
     text-align: center;
     margin-bottom: 1rem;
   }
   .content-wrapper {
-    width: 540px;
+    width: 40%;
     max-width: 90%;
     margin: 0 auto;
+    margin-bottom: 5.7rem;
     text-align: center;
     padding: 2rem; /* Added padding for better spacing */
     background-color: #fff; /* Clean white background */

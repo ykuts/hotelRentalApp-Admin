@@ -3,7 +3,7 @@
   .heading {
     text-transform: capitalize;
     font-size: 2.5rem; /* Prominent heading */
-    font-weight: 450;
+    font-weight: 500;
     color: #333;
     text-align: center;
     margin-bottom: 1rem;
@@ -19,7 +19,7 @@
   }
   .img-wrapper {
     width: 100%;
-    height: 70%;
+    height: 100vh;
     margin-bottom: 1rem;
     overflow: hidden;
     border-radius: 12px; /* Smooth rounded edges for the image container */
@@ -68,6 +68,7 @@
       border: none;
       padding: 1rem 2rem;
       color: white;
+      margin-bottom: 2.5rem;
 
       &:hover {
         background: linear-gradient(

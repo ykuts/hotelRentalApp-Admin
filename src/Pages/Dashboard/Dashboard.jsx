@@ -25,9 +25,14 @@ const Dashboard = () => {
   }, [user]);
 
   return (
+    <div className="container">
     <div>
-      <h1 className="heading center">Dashboard</h1>
+      <h1 className="heading center">Booking Overview
+
+      </h1>
       {bookings.length > 0 ? <BookingList data={bookings} /> : null}
+    </div>
+    
     </div>
   );
 };
