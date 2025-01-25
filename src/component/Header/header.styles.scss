@@ -1,36 +1,8 @@
-// .main-header {
-//   .container {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     padding: 2rem 0rem;
-//   }
-//   nav a {
-//     display: inline-block;
-//     margin-left: 1rem;
-//     font-size: 1rem;
-//   }
-//   button {
-//     outline: none;
-//     cursor: pointer;
-//     font-size: 1rem;
-//     display: inline-block;
-//     margin-left: 1rem;
-//     border: none;
-//   }
-// }
-
-
 .main-header {
   background: linear-gradient(135deg, #1e1e1e, #4a4a4a); /* Smooth gradient background */
   color: #fff;
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
-  padding: -1% 1% 3%; /* Default padding */
-  position: relative; /* Ensures dropdowns or overlays are positioned properly */
-  // position: sticky; /* Make header stick to the top of the viewport */
-  // top: 0; /* Stick to the top when scrolling */
-  // z-index: 1000; /* Ensure it's above other content */
-  // transition: all 0.3s ease;
+  padding: -1% 1% 3%; 
   .container {
     display: flex;
     align-items: center;
@@ -42,14 +14,14 @@
   .logo {
       font-size: 1.3rem;
       font-weight: bold;
-      color: #ff77c2; /* Pink color for the logo to stand out */
+      color: #ff77c2; 
       text-transform: uppercase;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     
     .logo:hover {
-      color: #ffffffe3; /* Logo color change on hover */
+      color: #ffffffe3; 
     }
 
   nav {
@@ -59,13 +31,13 @@
      font-size: 1rem;
       font-weight: 500;
       text-decoration: none;
-      color: #ffffff; /* Default link color */
-      border-bottom: 2px solid transparent; /* Subtle underline */
+      color: #ffffff; 
+      border-bottom: 2px solid transparent; 
       transition: all 0.3s ease-in-out;
       text-align: center;
       &:hover {
-        color: #ff7dc4; /* Accent color on hover */
-        border-bottom-color: #ff7dc4; /* Highlight underline on hover */
+        color: #ff7dc4; 
+        border-bottom-color: #ff7dc4; 
       }
     }
   }
@@ -81,21 +53,21 @@
     margin-left: 4.9rem;
     margin-top: 0.5rem;
     padding: 10px 18px;
-    border-radius: 25px; /* Rounded, pill-shaped buttons */
+    border-radius: 25px; 
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {
       background: linear-gradient(135deg, #ff5a5a, #ff7dc4); /* Reverse gradient on hover */
-      transform: translateY(-3px); /* Slight lift effect */
-      box-shadow: 0 8px 15px rgba(255, 90, 90, 0.4); /* Glow effect */
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 15px rgba(255, 90, 90, 0.4); 
     }
 
     &:active {
-      transform: translateY(0); /* Reset lift on click */
-      box-shadow: 0 4px 8px rgba(255, 90, 90, 0.4); /* Subtle shadow on active */
+      transform: translateY(0); 
+      box-shadow: 0 4px 8px rgba(255, 90, 90, 0.4); 
     }
   }
 }
-///////////////
+
 
   

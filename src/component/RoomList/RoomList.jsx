@@ -20,6 +20,8 @@ const RoomList = ({ data }) => {
           </Link>
         );
       })}
+
+      
     </div>
   );
 };

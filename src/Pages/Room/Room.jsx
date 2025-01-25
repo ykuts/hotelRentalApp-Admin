@@ -69,10 +69,6 @@ const Room = () => {
           </div>
         ) : null}
       </div>
-
-
-     
-
     </div>
   );
 };

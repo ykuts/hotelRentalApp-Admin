@@ -17,7 +17,7 @@ const Carousel = ({ data }) => {
       return () => {
         clearInterval(interval);
       };
-    }, 5000);
+    }, 8000);
   }, []);
 
   return (

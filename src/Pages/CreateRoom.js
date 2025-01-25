@@ -87,7 +87,8 @@ const CreateRoom = () => {
     };
 
     // dispatch createRoom function
-    dispatch(createRoom(dataToSubmit));    // let dataTosubmit = {name, price, desc, roomNumbers, img};
+    dispatch(createRoom(dataToSubmit));    
+    // let dataTosubmit = {name, price, desc, roomNumbers, img};
   };
 
   return (
@@ -151,7 +152,12 @@ const CreateRoom = () => {
           <button type="submit">Submit</button>
         </form>
       </div>
+
+
+   
     </div>
+
+    
   );
 };
 
