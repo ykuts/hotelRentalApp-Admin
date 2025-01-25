@@ -16,7 +16,7 @@ const Header = () => {
     <header className="main-header">
       <div className="container">
         <Link to="/">
-          <h1 className="logo">DreamyVilla</h1>
+          <h1 className="logo">BlossomStay</h1>
         </Link>
 
         <nav>

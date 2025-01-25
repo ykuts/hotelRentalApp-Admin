@@ -26,15 +26,15 @@ const Home = () => {
   <div className="container">
     <div className="about-content">
       <div className="text-section">
-        <h2>About DreamyVilla</h2>
+        <h2>About BlossomStay</h2>
         <p>
-          At LuxStay, we redefine the travel experience by offering a curated selection of luxury hotels
+          At BlossomStay, we redefine the travel experience by offering a curated selection of luxury hotels
           and unique stays that cater to your every need. Whether you're looking for a quiet retreat or a
           vibrant city experience, we ensure comfort, elegance, and first-class service every step of the way.
         </p>
          <div className="image-section">
         <br />
-        <img src="/images/landing-2.jpeg" alt="LuxStay Experience" />
+        <img src="/images/landing-2.jpeg" alt="BlossomStay Experience" />
       </div>
       </div>
      
@@ -183,7 +183,7 @@ const Home = () => {
     <div className="footer-content">
       {/* <!-- Logo & Description --> */}
       <div className="footer-left">
-        <h3>Dreamyvilla</h3>
+        <h3>BlossomStay</h3>
         <p>Luxury experience, designed just for you.</p>
       </div>
 
@@ -202,7 +202,7 @@ const Home = () => {
         <div className="contact-details">
         <h4>Contact Details</h4>
         <p>
-          <strong>Email:</strong> <a href="mailto:info@dreamyvilla.com">info@dreamyvilla.com</a> <br />
+          <strong>Email:</strong> <a href="mailto:info@BlossomStay.com">info@BlossomStay.com</a> <br />
           <strong>Phone:</strong> +1 234 567 8900 <br />
           <strong>Address:</strong> 123 Luxury Lane, Dream City, USA
         </p>
@@ -230,7 +230,7 @@ const Home = () => {
 
     {/* <!-- Footer Bottom Section --> */}
     <div className="footer-bottom">
-      <p>&copy; 2025 dreamyvilla. All rights reserved.</p>
+      <p>&copy; 2025 BlossomStay. All rights reserved.</p>
     </div>
   </div>
 </footer>
