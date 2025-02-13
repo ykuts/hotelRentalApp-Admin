@@ -63,9 +63,10 @@ export const updateRoom = createAsyncThunk(
           "Content-Type": "application/json",
         },
         method: "PUT",
-        body: JSON.stringify(rest),
+        body: JSON.stringify(rest)
       });
-      const data = await res.json();
+      const data =  res.json();
+      console.log(data);
       if (!res.ok) {
         return thunkApi.rejectWithValue(data);
       }

@@ -7,7 +7,7 @@ const Home = () => {
         <img src="/images/landing-1.jpeg" alt="Landing" />
         <div className="overlay">
           <div className="content">
-            <h1>Welcome to DreamyVilla</h1>
+            <h1>Welcome to BlossomStay</h1>
             <p>
               Discover endless possibilities and solutions tailored to your
               needs.
