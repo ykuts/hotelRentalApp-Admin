@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user, isSuccess } = useSelector((state) => state.auth);
+  const { isSuccess } = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -19,7 +19,7 @@ const Login = () => {
       navigate("/dashboard");
       dispatch(reset());
     }
-  }, [isSuccess, user,navigate, dispatch]);
+  }, [isSuccess,navigate, dispatch]);
 
   const handleChange = (e) => {
     setFormData((prevState) => ({
