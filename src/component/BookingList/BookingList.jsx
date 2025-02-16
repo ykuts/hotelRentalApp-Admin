@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+
+// import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./bookingList.styles.scss"; // Import the CSS file for styling
 
@@ -11,10 +13,10 @@ const BookingList = ({ data }) => {
   //   ];
 
   // Function to handle actions (e.g., edit, delete)
-  const handleAction = (id, action) => {
-    // Implement action logic here
-    console.log(`${action} user with ID ${id}`);
-  };
+  // const handleAction = (id, action) => {
+  //   // Implement action logic here
+  //   console.log(`${action} user with ID ${id}`);
+  // };
 
   return (
     <div className="container">
@@ -45,7 +47,7 @@ const BookingList = ({ data }) => {
         </table>
       </div>
     </div>
-);
+  );
 };
 
 export default BookingList;

@@ -35,7 +35,7 @@ const EditRoom = () => {
       }
     };
     getRoom();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (isSuccess) {
@@ -43,7 +43,7 @@ const EditRoom = () => {
       dispatch(reset());
       navigate("/rooms");
     }
-  }, [isSuccess]);
+  }, [isSuccess, dispatch, navigate]);
 
   const handleChange = (e) => {
     setFormData((prev) => ({

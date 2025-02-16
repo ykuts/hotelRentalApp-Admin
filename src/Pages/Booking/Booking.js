@@ -25,7 +25,7 @@ const Booking = () => {
       dispatch(reset());
       navigate("/dashboard");
     }
-  }, [isSuccess, isLoading, message, isError]);
+  }, [isSuccess, isLoading, message, isError, dispatch, navigate]);
   useEffect(() => {
     dispatch(reset());
     const getBooking = async () => {
@@ -38,7 +38,7 @@ const Booking = () => {
       }
     };
     getBooking();
-  }, []);
+  }, [dispatch, id]);
 
   const handleDelete = () => {
     dispatch(deleteBooking(id));

@@ -21,7 +21,7 @@ const RoomList = ({ data }) => {
         );
       })}
 
-      
+
     </div>
   );
 };

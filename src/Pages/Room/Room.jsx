@@ -22,7 +22,7 @@ const Room = () => {
       dispatch(reset());
      
     }
-  }, [isSuccess, dispatch, navigate]);
+  }, [isSuccess,navigate, dispatch]);
 
   useEffect(() => {
     const getRoom = async () => {
@@ -38,7 +38,7 @@ const Room = () => {
       }
     };
     getRoom();
-  }, []);
+  }, [id]);
 
   const handleDelete = () => {
     dispatch(deleteRoom(id));

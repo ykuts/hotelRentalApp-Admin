@@ -16,13 +16,14 @@ const Dashboard = () => {
     if (isSuccess) {
       dispatch(reset());
     }
-  }, [isSuccess]);
+  }, [isSuccess, dispatch]);
+  
   useEffect(() => {
     if (!user) {
       navigate("/login");
     }
     dispatch(getBookings());
-  }, [user]);
+  }, [user,navigate,dispatch]);
 
   return (
     <div className="container">

@@ -19,7 +19,7 @@ const Login = () => {
       navigate("/dashboard");
       dispatch(reset());
     }
-  }, [isSuccess, user, dispatch, navigate]);
+  }, [isSuccess, user,navigate, dispatch]);
 
   const handleChange = (e) => {
     setFormData((prevState) => ({
