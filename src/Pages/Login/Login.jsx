@@ -15,7 +15,7 @@ const Login = () =>{
   const { email, password } = formData;
 
   useEffect(() => {
-    console.log("User:", user, "isSuccess:", isSuccess);
+    // console.log("User:", user, "isSuccess:", isSuccess);
     if (isSuccess) {
       navigate("/dashboard");
       dispatch(reset());
