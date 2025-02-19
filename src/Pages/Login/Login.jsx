@@ -62,7 +62,7 @@ const Login = () =>{
               placeholder="Enter password"
               value={password}
               onChange={handleChange}
-            />
+           autoComplete="current-password" />
           </div>
 
           <button type="submit">Submit</button>
