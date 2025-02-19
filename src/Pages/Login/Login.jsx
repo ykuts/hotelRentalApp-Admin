@@ -3,7 +3,7 @@ import { loginUser, reset } from "../../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-const Login = () => {
+const Login = () =>{
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, isSuccess } = useSelector((state) => state.auth);

@@ -30,7 +30,7 @@ export const loginUser = createAsyncThunk(
   "auth/login",
   async (userData, thunkApi) => {
     try {
-      const res = await fetch("/api/users/login", {
+      const res = await fetch(`/api/users/login`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -58,7 +58,7 @@ export const logoutUser = createAsyncThunk(
   "auth/logout",
   async (_, thunkApi) => {
     try {
-      const res = await fetch("/api/users/logout");
+      const res = await fetch(`/api/users/logout`);
       if (!res.ok) {
         const error = await res.json();
         return thunkApi.rejectWithValue(error);
