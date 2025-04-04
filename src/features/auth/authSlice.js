@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+// const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 const user = JSON.parse(localStorage.getItem("user"));
 
@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk(
   "auth/login",
   async (userData, thunkApi) => {
     try {
-      const res = await fetch(`${API_URL}/users/login`, {
+      const res = await fetch("/api/users/login", {
         headers: {
           "Content-Type": "application/json",
         },
