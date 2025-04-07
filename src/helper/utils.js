@@ -11,7 +11,7 @@ export const uploadImage = async (file) => {
    
   // console.log('Cloud Name:', cloudName);
   const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
-
+console.log('Cloud url:', url);
   const response = await fetch(url, {
     method: "POST",
     body: formData,
