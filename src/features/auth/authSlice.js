@@ -32,7 +32,7 @@ export const loginUser = createAsyncThunk(
   "auth/login",
   async (userData, thunkApi) => {
     try {
-      const res = await fetch(`${API_URL}/users/login`, {
+      const res = await fetch('/users/login', {
         headers: {
           "Content-Type": "application/json",
         },
