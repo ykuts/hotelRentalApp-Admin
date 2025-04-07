@@ -8,6 +8,8 @@ import {
 } from "../../features/booking/bookingSlice";
 import { useDispatch, useSelector } from "react-redux";
 
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
+
 // booking
 const Booking = () => {
   const { id } = useParams();
@@ -30,7 +32,7 @@ const Booking = () => {
     dispatch(reset());
     const getBooking = async () => {
       try {
-        const res = await fetch(`/api/bookings/${id}`);
+        const res = await fetch(`${API_URL}/bookings/${id}`);
         const data = await res.json();
         setBooking(data);
       } catch (error) {

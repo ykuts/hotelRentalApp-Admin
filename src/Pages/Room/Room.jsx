@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { reset, deleteRoom } from "../../features/room/roomSlice";
 import Carousel from "../../component/Carousel/Carousel";
 
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
+
 const Room = () => {
   const { user } = useSelector((state) => state.auth);
   const { isSuccess } = useSelector((state) => state.room);
@@ -27,7 +29,7 @@ const Room = () => {
   useEffect(() => {
     const getRoom = async () => {
       try {
-        const res = await fetch(`/api/rooms/${id}`);
+        const res = await fetch(`${API_URL}/rooms/${id}`);
 
         if (res.ok) {
           const data = await res.json();

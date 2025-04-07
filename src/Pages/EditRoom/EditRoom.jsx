@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { updateRoom, reset } from "../../features/room/roomSlice";
 import { useSelector, useDispatch } from "react-redux";
 
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
+
 const EditRoom = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,7 +22,7 @@ const EditRoom = () => {
   useEffect(() => {
     const getRoom = async () => {
       try {
-        const res = await fetch(`/api/rooms/${id}`);
+        const res = await fetch(`${API_URL}/rooms/${id}`);
         const data = await res.json();
 
         const { roomNumbers, ...rest } = data;
