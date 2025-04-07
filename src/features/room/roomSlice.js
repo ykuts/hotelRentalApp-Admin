@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
 
 const initialState = {
   rooms: [],
@@ -38,7 +39,7 @@ export const createRoom = createAsyncThunk(
 // get all rooms
 export const getRooms = createAsyncThunk("room/getall", async (_, thunkApi) => {
   try {
-    const res = await fetch("/api/rooms");
+    const res = await fetch(`${API_URL}/rooms`);
     if (!res.ok) {
       const error = await res.json();
       return thunkApi.rejectWithValue(error);
@@ -58,7 +59,7 @@ export const updateRoom = createAsyncThunk(
   async (roomData, thunkApi) => {
     try {
       const { roomId, ...rest } = roomData;
-      const res = await fetch(`/api/rooms/${roomId}`, {
+      const res = await fetch(`${API_URL}/rooms/${roomId}`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -83,7 +84,7 @@ export const deleteRoom = createAsyncThunk(
   "room/delete",
   async (roomId, thunkApi) => {
     try {
-      const res = await fetch(`/api/rooms/${roomId}`, {
+      const res = await fetch(`${API_URL}/rooms/${roomId}`, {
         method: "DELETE",
       });
       const data = await res.json();

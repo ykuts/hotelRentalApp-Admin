@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
 const initialState = {
   bookings: [],
   booking: null,
@@ -13,7 +13,7 @@ export const createBooking = createAsyncThunk(
   "booking/create",
   async (bookingData, thunkApi) => {
     try {
-      const res = await fetch(`/api/bookings`, {
+      const res = await fetch(`${API_URL}/bookings`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -35,7 +35,7 @@ export const getBookings = createAsyncThunk(
   "booking/getbookings",
   async (_, thunkApi) => {
     try {
-      const res = await fetch("/api/bookings");
+      const res = await fetch(`${API_URL}/bookings`);
       const data = await res.json();
       if (!res.ok) {
         return thunkApi.rejectWithValue(data);
@@ -51,7 +51,7 @@ export const deleteBooking = createAsyncThunk(
   "booking/delete",
   async (id, thunkApi) => {
     try {
-      const res = await fetch(`/api/bookings/${id}`, {
+      const res = await fetch(`${API_URL}/bookings/${id}`, {
         headers: {
           "Content-type": "application/json",
         },
@@ -74,7 +74,7 @@ export const confirmBooking = createAsyncThunk(
   "booking/confirm",
   async (bookingId, thunkApi) => {
     try {
-      const res = await fetch(`/api/bookings/${bookingId}`, {
+      const res = await fetch(`${API_URL}/bookings/${bookingId}`, {
         headers: {
           "Content-Type": "application/json",
         },
