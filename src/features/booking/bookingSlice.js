@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
+
 const initialState = {
   bookings: [],
   booking: null,

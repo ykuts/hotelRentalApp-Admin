@@ -14,7 +14,7 @@ export const createRoom = createAsyncThunk(
   "room/create",
   async (roomData, thunkApi) => {
     try {
-      const res = await fetch("/api/rooms", {
+      const res = await fetch(`${API_URL}/rooms`, {
         headers: {
           "Content-Type": "application/json",
         },
