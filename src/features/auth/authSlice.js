@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const API_URL = process.env.REACT_APP_API_URL;
+console.log(API_URL);
 
 const user = JSON.parse(localStorage.getItem("user"));
 
