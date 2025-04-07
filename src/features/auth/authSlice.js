@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-const API_URL = process.env.REACT_APP_API_URL || "hotelrentalappserver-production.up.railway.app/api";
+export const API_URL = process.env.REACT_APP_API_URL || "hotelrentalappserver-production.up.railway.app/api";
 
 const user = JSON.parse(localStorage.getItem("user"));
 
