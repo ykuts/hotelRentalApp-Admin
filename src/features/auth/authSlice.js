@@ -45,6 +45,7 @@ export const loginUser = createAsyncThunk(
       }
 
       const data = await res.json();
+      console.log(data);
 
       //   set the data in localstorage
       localStorage.setItem("user", JSON.stringify(data));
