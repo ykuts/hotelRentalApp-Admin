@@ -14,9 +14,11 @@ export const createBooking = createAsyncThunk(
   "booking/create",
   async (bookingData, thunkApi) => {
     try {
+      const user = JSON.parse(localStorage.getItem("user"));
       const res = await fetch(`${API_URL}/api/bookings`, {
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${user?.token}`
         },
         method: "POST",
         body: JSON.stringify(bookingData),
@@ -36,7 +38,14 @@ export const getBookings = createAsyncThunk(
   "booking/getbookings",
   async (_, thunkApi) => {
     try {
-      const res = await fetch(`${API_URL}/api/bookings`);
+      const user = JSON.parse(localStorage.getItem("user"));
+      const res = await fetch(`${API_URL}/api/bookings`, {
+        headers: {
+          "Authorization": `Bearer ${user?.token}`,
+          "Content-Type": "application/json"
+        },
+        method: "GET"
+      });
       const data = await res.json();
       if (!res.ok) {
         return thunkApi.rejectWithValue(data);
@@ -52,9 +61,12 @@ export const deleteBooking = createAsyncThunk(
   "booking/delete",
   async (id, thunkApi) => {
     try {
+       const user = JSON.parse(localStorage.getItem("user"));
+      
       const res = await fetch(`${API_URL}/api/bookings/${id}`, {
         headers: {
           "Content-type": "application/json",
+          "Authorization": `Bearer ${user?.token}`
         },
         method: "DELETE",
       });
@@ -75,9 +87,12 @@ export const confirmBooking = createAsyncThunk(
   "booking/confirm",
   async (bookingId, thunkApi) => {
     try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      
       const res = await fetch(`${API_URL}/api/bookings/${bookingId}`, {
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${user?.token}`
         },
         method: "PUT",
         body: JSON.stringify({ confirmed: true }),
