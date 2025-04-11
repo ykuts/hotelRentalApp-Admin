@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { reset, deleteRoom } from "../../features/room/roomSlice";
 import Carousel from "../../component/Carousel/Carousel";
 
-export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotel-rental-app-server.vercel.app";
 
 const Room = () => {
   const { user } = useSelector((state) => state.auth);

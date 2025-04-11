@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { updateRoom, reset } from "../../features/room/roomSlice";
 import { useSelector, useDispatch } from "react-redux";
 
-export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotel-rental-app-server.vercel.app";
 
 const EditRoom = () => {
   const dispatch = useDispatch();

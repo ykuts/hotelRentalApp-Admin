@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver-production.up.railway.app";
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotel-rental-app-server.vercel.app";
 
 const initialState = {
   bookings: [],
