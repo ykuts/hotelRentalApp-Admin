@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-export const API_URL = process.env.REACT_APP_API_URL || "https://hotel-rental-app-server.vercel.app";
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver.up.railway.app";
 
 const initialState = {
   rooms: [],
@@ -14,7 +14,7 @@ export const createRoom = createAsyncThunk(
   "room/create",
   async (roomData, thunkApi) => {
     try {
-      const res = await fetch(`${API_URL}/rooms`, {
+      const res = await fetch(`${API_URL}/api/rooms`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -39,7 +39,7 @@ export const createRoom = createAsyncThunk(
 // get all rooms
 export const getRooms = createAsyncThunk("room/getall", async (_, thunkApi) => {
   try {
-    const res = await fetch(`${API_URL}/rooms`);
+    const res = await fetch(`${API_URL}/api/rooms`);
     console.log(res);
     if (!res.ok) {
       const error = await res.json();
@@ -60,7 +60,7 @@ export const updateRoom = createAsyncThunk(
   async (roomData, thunkApi) => {
     try {
       const { roomId, ...rest } = roomData;
-      const res = await fetch(`${API_URL}/rooms/${roomId}`, {
+      const res = await fetch(`${API_URL}/api/rooms/${roomId}`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -85,7 +85,7 @@ export const deleteRoom = createAsyncThunk(
   "room/delete",
   async (roomId, thunkApi) => {
     try {
-      const res = await fetch(`${API_URL}/rooms/${roomId}`, {
+      const res = await fetch(`${API_URL}/api/rooms/${roomId}`, {
         method: "DELETE",
       });
       const data = await res.json();
