@@ -1,5 +1,6 @@
 // upload image to cloudinary
 const api_key = process.env.REACT_APP_API_KEY;
+const cloudName = process.env.REACT_APP_CLOUD_NAME;
 // upload images
 export const uploadImage = async (file) => {
   const formData = new FormData();
@@ -7,7 +8,7 @@ export const uploadImage = async (file) => {
   formData.append("upload_preset", process.env.REACT_APP_UPLOAD_PRESET);
   formData.append("api_key", api_key );
 
-  const cloudName = process.env.REACT_APP_CLOUD_NAME;
+  
    
   // console.log('Cloud Name:', cloudName);
   const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
