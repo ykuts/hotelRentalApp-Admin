@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./carousel.styles.scss";
 // import { current } from "@reduxjs/toolkit";
 const Carousel = ({ data }) => {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (!data || data.length === 0) {
@@ -13,13 +13,7 @@ const Carousel = ({ data }) => {
     console.log("Carousel images:", data);
     
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        if (prevIndex >= data.length - 1) {
-          return 0;
-        } else {
-          return prevIndex + 1;
-        }
-      });
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     }, 5000);
     
     return () => clearInterval(interval);
