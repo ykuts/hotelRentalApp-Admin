@@ -95,15 +95,32 @@ export const deleteRoom = createAsyncThunk(
   "room/delete",
   async (roomId, thunkApi) => {
     try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user || !user.token) {
+        console.error("No token available");
+        return thunkApi.rejectWithValue("Authentication required");
+      }
+      
+      console.log("Deleting room with ID:", roomId);
+      
       const res = await fetch(`${API_URL}/api/rooms/${roomId}`, {
         method: "DELETE",
+        headers: {
+          "Authorization": `Bearer ${user.token}`
+        }
       });
-      const data = await res.json();
+
       if (!res.ok) {
-        return thunkApi.rejectWithValue(data);
+        const errorText = await res.text();
+        console.error(`Error ${res.status}: ${errorText}`);
+        return thunkApi.rejectWithValue(errorText || `Error ${res.status}`);
       }
+      
+      const data = await res.json();
+      console.log("Room successfully deleted:", data);
       return data;
     } catch (error) {
+      console.error("Error deleting room:", error);
       return thunkApi.rejectWithValue(error.message);
     }
   }
