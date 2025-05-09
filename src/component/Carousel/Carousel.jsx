@@ -6,27 +6,26 @@ const Carousel = ({ data }) => {
 
   useEffect(() => {
     if (!data || data.length === 0) {
-          console.error("No images provided to Carousel");
-          return;
+      console.error("No images provided to Carousel");
+      return;
     }
-
+    
     console.log("Carousel images:", data);
     
     const interval = setInterval(() => {
-      setCurrentIndex((prevState) => {
-        if (prevState === data.length - 1) {
-          return (prevState = 0);
+      setCurrentIndex((prevIndex) => {
+        if (prevIndex >= data.length - 1) {
+          return 0;
         } else {
-          return prevState + 1;
+          return prevIndex + 1;
         }
       });
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [data]);
 
-      return () => {
-        clearInterval(interval);
-      };
-    }, 8000);
-  }, [data.length]);
-
+  
   if (!data || data.length === 0) {
     return (
       <div className="carousel-wrapper">
