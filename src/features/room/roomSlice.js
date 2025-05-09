@@ -14,13 +14,22 @@ export const createRoom = createAsyncThunk(
   "room/create",
   async (roomData, thunkApi) => {
     try {
+      console.log("Creating room with data:", roomData);
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user || !user.token) {
+        return thunkApi.rejectWithValue("User is not authorized");
+      }
       const res = await fetch(`${API_URL}/api/rooms`, {
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${user.token}`
         },
         method: "POST",
         body: JSON.stringify(roomData),
       });
+
+      const textResponse = await res.text();
+      console.log("Response text:", textResponse);
 
       if (!res.ok) {
         const error = await res.json();
