@@ -32,14 +32,13 @@ export const createRoom = createAsyncThunk(
       console.log("Response text:", textResponse);
 
       if (!res.ok) {
-        const error = await res.json();
-        return thunkApi.rejectWithValue(error);
+        return thunkApi.rejectWithValue(textResponse);
       }
 
-      const data = await res.json();
+      const data = JSON.parse(textResponse);
       return data;
     } catch (error) {
-      console.log(error.message);
+      console.error("Error in createRoom:", error);
       return thunkApi.rejectWithValue(error.message);
     }
   }
