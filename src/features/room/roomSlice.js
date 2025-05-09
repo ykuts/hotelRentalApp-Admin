@@ -68,6 +68,7 @@ export const updateRoom = createAsyncThunk(
   async (roomData, thunkApi) => {
     try {
       const { roomId, ...rest } = roomData;
+      const user = JSON.parse(localStorage.getItem("user"));
       const res = await fetch(`${API_URL}/api/rooms/${roomId}`, {
         headers: {
           "Content-Type": "application/json",
