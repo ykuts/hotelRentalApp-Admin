@@ -28,14 +28,14 @@ export const createRoom = createAsyncThunk(
         body: JSON.stringify(roomData),
       });
 
-      const textResponse = await res.text();
-      console.log("Response text:", textResponse);
-
       if (!res.ok) {
-        return thunkApi.rejectWithValue(textResponse);
+        const errorText = await res.text();
+        console.error("API responded with error:", res.status, errorText);
+        return thunkApi.rejectWithValue(errorText);
       }
 
-      const data = JSON.parse(textResponse);
+      const data = await res.json();
+      console.log("Room created successfully:", data);
       return data;
     } catch (error) {
       console.error("Error in createRoom:", error);
