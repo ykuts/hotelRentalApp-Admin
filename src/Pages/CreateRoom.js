@@ -9,7 +9,7 @@ const CreateRoom = () => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => state.auth);
-  const { isSuccess } = useSelector((state) => state.room);
+  const { isSuccess, isLoading, isError, message } = useSelector((state) => state.room);
 
   const [files, setFiles] = useState("");
   const [formData, setFormData] = useState({
@@ -34,11 +34,17 @@ const CreateRoom = () => {
   }, [user, navigate]);
 
   useEffect(() => {
-    if (isSuccess) {
-      dispatch(reset());
-      navigate("/rooms");
-    }
-  }, [isSuccess, dispatch, navigate]);
+  if (isSuccess) {
+    alert("Room created successfully!");
+    dispatch(reset());
+    navigate("/rooms");
+  }
+  
+  if (isError) {
+    alert(`Error: ${message}`);
+    dispatch(reset());
+  }
+}, [isSuccess, isError, message, dispatch, navigate]);
   
 
   const handleChange = (e) => {
