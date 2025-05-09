@@ -9,7 +9,7 @@ const CreateRoom = () => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => state.auth);
-  const { isSuccess, isLoading, isError, message } = useSelector((state) => state.room);
+  const { isSuccess, isError, message } = useSelector((state) => state.room);
 
   const [files, setFiles] = useState("");
   const [formData, setFormData] = useState({
