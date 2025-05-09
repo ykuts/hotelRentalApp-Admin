@@ -58,6 +58,7 @@ const CreateRoom = () => {
     e.preventDefault();
 
     if (!name || !price || !roomNumbers) {
+      console.error("Not all required fields are filled in");
       return;
     }
 
@@ -68,28 +69,37 @@ const CreateRoom = () => {
       };
     });
 
-    // upload images to cloudinary
-    let list = [];
-    list = await Promise.all(
-      Object.values(files).map(async (file) => {
-        const url = await uploadImage(file);
-        return url;
-      })
-    );
+    console.log("Parsed room numbers:", roomArray);
+    console.log("Files to upload:", files);
 
-    // console.log(list);
+    // upload images to cloudinary
+    try {
+    let list = [];
+    if (files && Object.keys(files).length > 0) {
+      list = await Promise.all(
+        Object.values(files).map(async (file) => {
+          const url = await uploadImage(file);
+          return url;
+        })
+      );
+    }
+    
+    console.log("Uploaded images:", list);
+
     const dataToSubmit = {
       name,
-      price,
+      price: Number(price),
       desc,
       roomNumbers: roomArray,
       img: list,
     };
-
-    // dispatch createRoom function
-    dispatch(createRoom(dataToSubmit));    
-    // let dataTosubmit = {name, price, desc, roomNumbers, img};
-  };
+    
+    console.log("Data to submit:", dataToSubmit);
+    dispatch(createRoom(dataToSubmit));
+  } catch (error) {
+    console.error("Error during form submission:", error);
+  }
+};
 
   return (
     <div className="container">
