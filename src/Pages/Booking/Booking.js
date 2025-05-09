@@ -8,7 +8,7 @@ import {
 } from "../../features/booking/bookingSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-export const API_URL = process.env.REACT_APP_API_URL || "https://hotel-rental-app-server.vercel.app";
+export const API_URL = process.env.REACT_APP_API_URL || "https://hotelrentalappserver.up.railway.app";
 
 // booking
 const Booking = () => {
@@ -32,7 +32,7 @@ const Booking = () => {
     dispatch(reset());
     const getBooking = async () => {
       try {
-        const res = await fetch(`${API_URL}/bookings/${id}`);
+        const res = await fetch(`${API_URL}/api/bookings/${id}`);
         const data = await res.json();
         setBooking(data);
       } catch (error) {
