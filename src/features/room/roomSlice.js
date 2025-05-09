@@ -71,6 +71,7 @@ export const updateRoom = createAsyncThunk(
       const res = await fetch(`${API_URL}/api/rooms/${roomId}`, {
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${user.token}`
         },
         method: "PUT",
         body: JSON.stringify(rest)
