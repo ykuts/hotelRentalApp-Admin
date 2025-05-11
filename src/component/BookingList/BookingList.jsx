@@ -36,7 +36,7 @@ const BookingList = ({ data }) => {
               <tr key={item._id}>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
-                <td>{item.roomId.name}</td>
+                <td>{item.roomId && item.roomId.name ? item.roomId.name : "N/A"}</td>
                 <td>{item.confirmed ? "Yes" : "No"}</td>
                 <td>
                   <Link to={`/bookings/${item._id}`}> View</Link>
